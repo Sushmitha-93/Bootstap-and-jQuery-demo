@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>jQuery practice</title>
+
+  <!--Bootstrap links-->
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!--<link rel="stylesheet" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="CSS/stylesheet.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script src="JS\jquerycode.js">
+
+</script>
+
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+
+    <div class="container">
+
+      <!-- 1: Nav bar header -->
+      <div class="navbar-header">
+
+        <a href="index.html" class="navbar-brand">My Page</a>
+
+        <!-- Box like button which shows up instead of nav bar in small screens -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+
+      <!-- 2: navbar-collapse collapse-->
+      <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="navbar-nav nav">
+        <li><a href="index.html">Home</a></li>
+        <li class="active"><a href="#">jQuery</a></li>
+        <li><a href="#">Page 2</a></li>
+      </ul>
+      <ul class="navbar-nav nav navbar-right">
+        <li><a href="#signUpModal" data-toggle="modal"><span class="glyphicon glyphicon-user"></span> Sign-Up</a></li>
+        <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+      </div>
+
+    </div>
+  </nav>
+  <!-- end of NAVBAR -->
+
+  <div class="jumbotron">
+    <div class="container">
+      <h1>jQuery Practice</h1>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- SIGN UP MODAL -->
+    <div class="modal fade" id="signUpModal">
+      <div class="modal-dialog modal-md">
+
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <button class="close" data-dismiss="modal">&times;</button>
+            <h2>Sign-Up</h2>
+          </div>
+
+          <div class="modal-body">
+            <form action="signup">
+              <div class="form-group">
+                <input type="text" class="form-control" name="userName" placeholder="User Name">
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control" name="email" placeholder="Email">
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control" name="pass1" id="pass1" placeholder="Password">
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control" name="pass2" id="pass2" placeholder="Confirm Password">
+              </div>
+            </form>
+          </div>
+
+          <div class="modal-footer">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                <button type="button" class="btn-signup form-control" data-dismiss="modal">Sign-Up</button>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                <button type="button" class="btn-close form-control" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+    <!-- end of SIGN UP MODAL -->
+
+    <h3 class="jheading">Document Ready event</h3>
+    <div class="well">
+      <div class="row">
+        <div class="col-md-6" style="text-align:center">
+          <p><code>$(document).(function(){ })</code></p>
+          <p>or</p>
+          <p><code>$(function(){})</code></p>
+        </div>
+        <div class="col-md-6">
+          <p>This prevents any jQuery method from running before the html document is finished loading</p>
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    <!-- Selectors -->
+    <h3 class="jheading">Selctors</h3>
+    <div class="well">
+      <ul>
+        <li><code>$("*")</code>       - Selects all elements</li>
+        <li><code>$("p")</code> - Selects p tags</li>
+        <li><code>$("p.intro")</code> - Selects p tags with id="intro"</li>
+        <li><code>$("#intro")</code> - Selects all tags with id="intro"</li>
+        <li><code>$("tr.even")</code> / <code>$("tr.odd")</code> - Selects all even / odd tr tags</li>
+      </ul>
+    </div>
+
+    <!--Events Table -->
+    <h3 class="jheading">Events</h3>
+    <div class="well">
+      <table class="table table-striped table-bordered table-hover" style="text-align: center">
+        <tbody>
+          <tr><th>Mouse Events</th>
+            <td id="click">click</td><td id="dblclick">dblclick</td><td id="mouseenter">mouseenter</td>
+            <td id="mouseleave">mouseleave</td><td id="hover">hover</td><td id="mousedown">mousedown</td>
+            <td id="mouseup">mouseup</td></tr>
+          <tr><th>Keyboard Events</th>
+            <td style="width: 90px;"><input type="text" id="keypress" value="keypress "></td>
+            <td style="width: 170px;"><input type="text" id="keydownup" value="keypdown & keyup "></td></tr>
+          <tr><th>Form Events</th><td>submit</td>
+            <td style="width: 85px;"><input type="text" class="focusblur" value="focus " style="width:150px;"></td>
+            <td style="width: 85px;"><input type="text" class="focusblur" value="blur "></td>
+            <td>change</td></tr>
+        </tbody>
+      </table> <!-- end of TABLE -->
+
+      <p>Example:</p>
+      <code><pre>
+      $(document).ready(function(){
+        $("#click").click(function(){
+          $(this).css("background-color","yellow");
+        })
+      })</pre></code>
+    </div>
+
+    <h3 class="jheading">Hide/Show/Toggle</h3>
+    <div class="well">
+      <p id="hideshow">With jQuery, you can hide and show HTML elements with the hide(), show() and toggle() methods</p>
+      <br>
+      <div style="text-align: center;">
+        <button type="button" class="btn btn-info" id="hidebtn">Hide</button>
+        <button type="button" class="btn btn-info" id="showbtn">Show</button>
+        <button type="button" class="btn btn-info" id="togglebtn">Toggle</button>
+        <button type="button" class="btn btn-info" id="togglespdbtn">Speed</button>
+      </div>
+
+      <code><pre>$(selector).hide(speed,callback);
+
+$(selector).show(speed,callback);</pre></code>
+
+    <br>
+    <p>The optional speed parameter specifies the speed of the hiding/showing, and can take the following values: "slow", "fast", or milliseconds.</p>
+    <p>The optional callback parameter is a function to be executed after the hide() or show() method completes (you will learn more about callback functions in a later chapter).</p>
+
+  </div> <!-- end of WELL -->
+
+  <!-- GET content (DOM Manipulation) -->
+  <h3 class="jheading">DOM Manipulation - Getting content</h3>
+  <div class="well">
+
+  </div>
+
+
+  </div> <!-- end of CONTAINER -->
+
+  <br>
+  <footer id="footer">
+    <p>Copyright MyPage, &copy;, 2018</p>
+  </footer>
+
+</body>
+</html>

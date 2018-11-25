@@ -1,0 +1,34 @@
+.login{
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+.panel{
+  border-color: #222;
+}
+
+.panel>.panel-heading{
+  background-color: #222;
+  text-align: center;
+}
+
+.form-control{
+  height: 43px;
+  font-size: 15px;
+}
+
+.btn-login{
+  border: 1px solid #ccc;
+  background-color: #ccc;
+}
+.btn-login:hover{
+  background-color: #336699;
+  color: white;
+}
+
+footer{
+  min-height: 80px;
+  background: black;
+  color:#ffffff;
+  text-align: center;
+  padding: 30px;
+}
